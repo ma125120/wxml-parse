@@ -1,0 +1,32 @@
+{
+  "name": "wxml-parse",
+  "version": "0.2.0",
+  "description": "wxml -> ast -> wxml，wxml美化或者压缩皆可",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "jest",
+    "bd": "tsc"
+  },
+  "keywords": [
+    "wxml",
+    "parse",
+    "wxml parse",
+    "wxml-parse"
+  ],
+  "author": "马鹏达",
+  "files": [
+    "lib"
+  ],
+  "repository": "https://github.com/ma125120/wxml-parse.git",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^26.0.22",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.25.0",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.5.5",
+    "typescript": "^4.2.4"
+  }
+}

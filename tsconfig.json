@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "outDir": "./",
+    "target": "ES6",
+    "module": "commonjs",
+    "allowJs": false,
+    "esModuleInterop": true,
+    "isolatedModules": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "declaration": true
+  },
+  "include": ["src"],
+  "exclude": ["lib", "bin", "__test__/**"]
+}

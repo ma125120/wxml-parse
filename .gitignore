@@ -1,0 +1,27 @@
+
+# dependencies
+**/node_modules
+**/build
+
+# production
+/dist
+
+# misc
+.DS_Store
+npm-debug.log*
+yarn-error.log
+
+.idea
+yarn.lock
+package-lock.json
+*bak
+.vscode
+.temp/**
+node_modules/**
+# kraken.config.js
+
+/lib
+*.tgz
+/demo
+/scripts
+*.wxml
