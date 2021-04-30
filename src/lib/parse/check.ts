@@ -16,7 +16,6 @@ export const checkValidate = (root: RootNode) => {
           throwError(`${node.tagName} 标签 必须具有 module 属性`);
         }
 
-        console.log(node.childNodes.length && 1, node);
         if (
           node.childNodes.length &&
           !(node.childNodes[0] as TextNode).textContent.includes(

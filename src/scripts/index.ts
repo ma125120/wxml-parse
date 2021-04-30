@@ -6,7 +6,8 @@ import { parse, generate, traverse, NODE_TYPES } from "../lib/index";
 
 // <wxs>var a = '<wxs>'</wxs>
 const ast = parse(
-  `<view wx:if=" sda " bindtap="{{ sda }}">123</view><wxs module="sad">var a = '<wxs>';module.exports=123</wxs>` +
+  // `<view class="{{ isShowFixed ? goodsInfo.title : '' }}">{{ isShowFixed ? goodsInfo.title : "" }}</view>`
+  `<view wx:if=" sda " bindtap="{{ sda }}" class="{{ wx ? '' : '' }}">{{ wx ? '' : '' }}123</view><wxs module="sad">var a = '<wxs>';module.exports=123</wxs>` +
     `<!--wxml-->
   <template name="staffName">
     <view>
@@ -33,7 +34,7 @@ traverse(ast, {
   },
 });
 
-console.log(ast);
+console.log(ast.childNodes[0], "dsa");
 
 const str = generate(ast as any, {
   compress: false,

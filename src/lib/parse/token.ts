@@ -106,8 +106,8 @@ export const token = (input: string, traverse, getNode) => {
     };
   }
 
-  // wxs内部，不支持嵌套标签，所以需要保留引号
-  // 正常情况下不需要保留引号
+  // wxs内部，不支持嵌套标签，所以需要判断引号
+  // 正常情况下需要保留引号，addText
   const getQuoteHandle = (char: string) => {
     const { parent } = getNode();
     const isWxs = parent?.tagName === "wxs";
@@ -125,6 +125,8 @@ export const token = (input: string, traverse, getNode) => {
       } else {
         addText(char);
       }
+    } else {
+      addText(char);
     }
   };
 
