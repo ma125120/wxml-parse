@@ -24,14 +24,14 @@ export const parse = (str: string) => {
     [TYPES.TEXT](text: string) {
       parent.childNodes.push(new TextNode(text, parent));
     },
-    [TYPES.TAG_OPEN](text: string, closing: boolean) {
-      if (closing) {
-        const tagName = (parent as any)?.tagName;
-        if (text !== tagName) {
-          console.info(`${tagName} 与 ${text}不一致，将被替换为 ${tagName}`);
-        }
-        return;
-      }
+    [TYPES.TAG_OPEN](text: string) {
+      // if (closing) {
+      //   const tagName = (parent as any)?.tagName;
+      //   if (text !== tagName) {
+      //     console.info(`${tagName} 与 ${text}不一致，将被替换为 ${tagName}`);
+      //   }
+      //   return;
+      // }
 
       node = new ElementNode({ tagName: text });
     },

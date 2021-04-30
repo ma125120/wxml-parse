@@ -15,7 +15,7 @@ const ast = parse(
     </view>
   </template>
 
-  <template is="staffName" data="{{...staffA}}"></template>
+  <text is="staffName" data="{{...staffA}}"> 123 </text>
   ` +
     `
   <!--\${node.comment}-->

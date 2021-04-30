@@ -109,6 +109,16 @@ describe(`压缩代码，美化代码`, () => {
       `<view bindtap="open" catchtouchmove="close">this is a view</view>`
     );
   });
+
+  it(`text元素内部不去除空格`, () => {
+    const ast = parse(
+      `<text wx:if="dsa" wx:else wx:for="{{sda}}"> this is a text </text>`
+    );
+    const str = generate(ast, { compress: false });
+    expect(str).toStrictEqual(
+      `<text wx:if="{{ dsa }}" wx:else wx:for="{{ sda }}"> this is a text </text>`
+    );
+  });
 });
 
 describe(`测试 traverse `, () => {

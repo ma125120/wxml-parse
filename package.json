@@ -1,6 +1,6 @@
 {
   "name": "wxml-parse",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "wxml -> ast -> wxml，wxml美化或者压缩皆可",
   "main": "lib/index.js",
   "scripts": {

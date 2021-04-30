@@ -34,9 +34,9 @@ function _serialize(node: BaseNode, config: ConfigType = {}, prevTab = "\n") {
   const serializeByType = {
     [NODE_TYPES.TEXT](node: TextNode): string {
       const text = node.textContent;
-      if (text.trim()) return text.trim();
+      if ((node.parentNode as ElementNode).tagName === "text") return text;
 
-      return "";
+      return text.trim() || "";
     },
     [NODE_TYPES.COMMENT](node: CommentNode): string {
       if (compress) return "";
