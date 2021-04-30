@@ -1,6 +1,6 @@
-import { genValueStr } from "../lib/generate";
-import { parse, generate, traverse, NODE_TYPES } from "../lib/index";
-import { ElementNode, TextNode } from "../lib/parse/nodes";
+import { genValueStr } from "../src/lib/generate";
+import { parse, generate, traverse, NODE_TYPES } from "../src/lib/index";
+import { ElementNode, TextNode } from "../src/lib/parse/nodes";
 
 describe(`测试公共函数`, () => {
   it(`测试genValueStr 不压缩`, () => {
