@@ -14,11 +14,18 @@ export const genValueStr = (key, value: true | string, compress = false) => {
   value = value.trim();
   const space = compress ? "" : " ";
   const reg = /\{\{\s*(.+)\s*\}\}/g;
-  const val = /^(bind|catch).+/g.test(key)
-    ? value.replace(reg, (_, s) => s.trim())
-    : /^wx\:.+/g.test(key) && !reg.test(value)
-    ? `{{${space}${value}${space}}}`
-    : value;
+  let val;
+  if (/^(bind|catch).+/g.test(key)) {
+    val = value.replace(reg, (_, s) => s.trim());
+  } else {
+    if (/^wx\:(?=key|for-item|for-index)/g.test(key) && !reg.test(value)) {
+      val = `${value}`;
+    } else if (/^wx\:.+/g.test(key) && !reg.test(value)) {
+      val = `{{${space}${value}${space}}}`;
+    } else {
+      val = value;
+    }
+  }
 
   return `${key}="${
     (compress
